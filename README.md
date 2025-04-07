@@ -33,8 +33,9 @@ CosSimilarity.py
 Why can Cosine Similarity be a good approach for this problem?
 Cosine similarity works well for short text comparisons, such as product names. It also handles variations in word order.
 Method
-First, TF-IDF (Term Frequency-Inverse Document Frequency) is used to convert product names into numerical vectors. Next step would be to measure the similarity between each pair of text-based vectors by analyzing the angle between their corresponding vector representations. The cosine similarity score is calculated for every product pair. Both TF-IDF and Cosine Similarity are implemented using scikit-learn. Finally, matches are identified based on a chosen threshold (set to 0.6).
-
+The fuzzy approach applies token-set-ratio which tokenizes each product name into sets of words and compares them based on overlap. This technique is robust to word order and extra words, making it ideal for matching variations of product names. An adjustable threshold controls sensitivity of the comparison (threshold 70 resulted in the most cohesive groups).
+Initially, I tested pairwise matching which finds a match for each product using the threshold and reports pairs of matching products. However, since multiple similar product names appeared in each dataset, I changed the algorithm to perform cluster-based grouping, which groups all similar products into clusters instead of just pairs.
+Results of both methods get saved as Excel files.
 
 
 Fuzzy
