@@ -41,7 +41,7 @@ Fuzzy
 fuzzy.py
 
 Why can fuzzy work?
-The next step is to measure the similarity between each pair of text-based vectors by analyzing the angle between their corresponding vector representations
+Fuzzy matching allows for uncertainty in text and measures similarity even when there are variations in wording.
 Method
 The algorithm applies token-based matching using rapidfuzz. An adjustable threshold controls sensitivity of the comparison (threshold 70 resulted in the most cohesive groups).
 Initially, I tested pairwise matching which finds a match for each product using the threshold and reports pairs of matching products. However, since multiple similar product names appeared in each dataset, I changed the algorithm to perform cluster-based grouping, which groups all similar products into clusters instead of just pairs.
